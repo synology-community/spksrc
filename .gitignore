@@ -1,0 +1,18 @@
+distrib
+packages
+tmp
+spk/*/work*
+spk/*/build*
+spk/*/publish*
+spk/*/status*
+INFO
+spk/*/*.tgz
+spk/*/*.spk
+/**/package/bin
+spk/*/tmp
+*.DS_Store
+*~
+
+# PyCharm project settings
+.idea
+

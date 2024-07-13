@@ -1,0 +1,17 @@
+{
+    "systemd-user-unit":{},
+	"usr-local-linker": {
+		"bin": ["bin/nomad"]
+	},
+    "data-share": {
+        "shares": [{
+            "name": "nomad",
+            "permission": {
+                "rw": ["nomad"]
+            }
+        }]
+    },
+    "port-config": {
+        "protocol-file": "conf/nomad.sc"
+    }
+}
