@@ -45,9 +45,9 @@ listener "tcp" {
   cluster_address  = "${SYNOLOGY_IP}:8201"
   tls_disable      = "true"
 }
-storage "consul" {
-  address = "127.0.0.1:8500"
-  path    = "vault/"
+
+storage "file" {
+  path = "${VAULT_SHARE_DIR}/var/lib/vault"
 }
 
 service_registration "consul" {}
