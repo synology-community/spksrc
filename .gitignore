@@ -12,6 +12,7 @@ INFO
 spk/*/tmp
 *.DS_Store
 *~
+example
 
 # PyCharm project settings
 .idea

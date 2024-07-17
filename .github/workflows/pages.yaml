@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  packer:
+    runs-on: ubuntu-latest
+    name: Run Packer
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup `packer`
+        uses: hashicorp/setup-packer@v3
+        id: setup
+        with:
+          version: "latest"
+
+      - name: Run `packer init`
+        id: init
+        run: |-
+          for d in templates/*; do
+            packer init $d
+          done
+
+      - name: Run `packer validate`
+        id: validate
+        run: |-
+          for d in templates/*; do
+            packer validate $d
+          done
+
+      - name: Build Artifact
+        run: |-
+          for d in templates/*; do
+            packer build $d
+          done
