@@ -13,6 +13,7 @@ spk/*/tmp
 *.DS_Store
 *~
 example
+assets
 
 # PyCharm project settings
 .idea

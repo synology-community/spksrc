@@ -1,5 +1,5 @@
 {
-    "systemd-user-unit":{},
+    "systemd-unit":{},
 	"usr-local-linker": {
 		"bin": ["bin/nomad"]
 	},
@@ -7,7 +7,15 @@
         "shares": [{
             "name": "nomad",
             "permission": {
-                "rw": ["nomad"]
+                "rw": ["nomad"],
+                "group_ro": [
+                    "users"
+                ],
+                "group_rw": [
+                    "administrators",
+                    "ContainerManager",
+                    "nomad"
+                ]
             }
         }]
     },

@@ -3,25 +3,13 @@
 PKG_NAME="${PKG_NAME:-nomad}"
 case "$1" in
     start)
-        if [ "${EUID}" -eq 0 ]; then
-            sudo -u "${PKG_NAME}" synosystemctl start "pkguser-${PKG_NAME}"
-        else
-            synosystemctl start "pkguser-${PKG_NAME}"
-        fi
+        synosystemctl start "pkg-${PKG_NAME}"
         ;;
     stop)
-        if [ "${EUID}" -eq 0 ]; then
-            sudo -u "${PKG_NAME}" synosystemctl stop "pkguser-${PKG_NAME}"
-        else
-            synosystemctl stop "pkguser-${PKG_NAME}"
-        fi
+        synosystemctl stop "pkg-${PKG_NAME}"
         ;;
     status)
-        if [ "${EUID}" -eq 0 ]; then
-            sudo -u "${PKG_NAME}" synosystemctl get-active-status "pkguser-${PKG_NAME}"
-        else
-            synosystemctl get-active-status "pkguser-${PKG_NAME}"
-        fi
+        synosystemctl get-active-status "pkg-${PKG_NAME}"
         ;;
     log)
         echo ""
