@@ -1,0 +1,9 @@
+{
+    "defaults": {
+        "run-as": "RUN_AS"
+    },
+    "ctrl-script": [{
+		"action": "run",
+		"run-as": "root"
+	}]
+}

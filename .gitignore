@@ -6,8 +6,8 @@ spk/*/build*
 spk/*/publish*
 spk/*/status*
 INFO
-spk/*/*.tgz
-spk/*/*.spk
+**/*.tgz
+**/*.spk
 /**/package/bin
 spk/*/tmp
 *.DS_Store

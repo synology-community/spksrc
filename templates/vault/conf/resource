@@ -1,0 +1,17 @@
+{
+    "systemd-user-unit":{},
+	"usr-local-linker": {
+		"bin": ["bin/vault"]
+	},
+    "data-share": {
+        "shares": [{
+            "name": "vault",
+            "permission": {
+                "rw": ["vault"]
+            }
+        }]
+    },
+    "port-config": {
+        "protocol-file": "conf/vault.sc"
+    }
+}

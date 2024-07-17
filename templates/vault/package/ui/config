@@ -1,0 +1,11 @@
+{
+    ".url": {
+        "SYNO.SDS.Vault": {
+            "title": "Vault UI",
+            "desc": "Vault UI",
+            "icon": "images/vault_256.png",
+            "type": "url",
+            "url": "@VAULT_WEB_UI_URL@"
+        }
+    }
+}

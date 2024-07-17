@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "$SYNOPKG_PKG_STATUS" = "UNINSTALL" ]; then
+    rm -f "/var/packages/consul/etc/consul_web_ui_url_config"
+fi
+
+# PKG_NAME="mypackage"
+# PKG_CONFIG_FILE="/var/packages/${PKG_NAME}/etc/config"
+
+# if [ "$SYNOPKG_PKG_STATUS" = "UNINSTALL" ]; then
+#     rm ${PKG_CONFIG_FILE}
+# fi
+
+exit 0

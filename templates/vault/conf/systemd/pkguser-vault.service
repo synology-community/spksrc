@@ -1,0 +1,11 @@
+[Unit]
+Description=vault
+After=network-online.target
+
+[Service]
+Type=simple
+Slice=vault.slice
+ExecStart=/var/packages/vault/target/start.sh
+Restart=always
+RestartSec=5
+KillMode=process

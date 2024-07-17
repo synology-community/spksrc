@@ -1,0 +1,33 @@
+#!/bin/bash
+
+PKG_NAME="${PKG_NAME:-nomad}"
+case "$1" in
+    start)
+        if [ "${EUID}" -eq 0 ]; then
+            sudo -u "${PKG_NAME}" synosystemctl start "pkguser-${PKG_NAME}"
+        else
+            synosystemctl start "pkguser-${PKG_NAME}"
+        fi
+        ;;
+    stop)
+        if [ "${EUID}" -eq 0 ]; then
+            sudo -u "${PKG_NAME}" synosystemctl stop "pkguser-${PKG_NAME}"
+        else
+            synosystemctl stop "pkguser-${PKG_NAME}"
+        fi
+        ;;
+    status)
+        if [ "${EUID}" -eq 0 ]; then
+            sudo -u "${PKG_NAME}" synosystemctl get-active-status "pkguser-${PKG_NAME}"
+        else
+            synosystemctl get-active-status "pkguser-${PKG_NAME}"
+        fi
+        ;;
+    log)
+        echo ""
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|status}" >&2
+        exit 1
+        ;;
+esac
