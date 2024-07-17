@@ -2,4 +2,10 @@
 layout: null
 ---
 {
+  "packages": [
+{% assign spk_files = site.static_files | where: "extname", ".spk" %}
+{% for spk in spk_files %}
+  "{{ spk.path }}",
+{% endfor %}
+  ]
 }
