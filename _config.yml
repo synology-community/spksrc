@@ -1,0 +1,4 @@
+theme: jekyll-theme-cayman
+title: "Synology packages for GitHub Pages"
+subtitle: "Synology packages for GitHub Pages"
+exclude: ["templates", "spk"]

@@ -39,12 +39,12 @@ build {
 
   provisioner "file" {
     source      = "vault_${var.version}_${var.os}_${var.arch}.spk"
-    destination = "${path.cwd}/packages/vault_${var.version}_${var.os}_${var.arch}.spk"
+    destination = "${path.cwd}/${var.dest_dir}/vault_${var.version}_${var.os}_${var.arch}.spk"
     direction   = "download"
   }
 
   post-processor "manifest" {
-    output      = "${path.cwd}/packages/vault-manifest.json"
+    output      = "${path.cwd}/${var.dest_dir}/vault-manifest.json"
     strip_path  = true
     custom_data = local.metadata
   }

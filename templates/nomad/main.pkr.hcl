@@ -39,12 +39,12 @@ build {
 
   provisioner "file" {
     source      = "nomad_${var.version}_${var.os}_${var.arch}.spk"
-    destination = "${path.cwd}/packages/nomad_${var.version}_${var.os}_${var.arch}.spk"
+    destination = "${path.cwd}/${var.dest_dir}/nomad_${var.version}_${var.os}_${var.arch}.spk"
     direction   = "download"
   }
 
   post-processor "manifest" {
-    output      = "${path.cwd}/packages/nomad-manifest.json"
+    output      = "${path.cwd}/${var.dest_dir}/nomad-manifest.json"
     strip_path  = true
     custom_data = local.metadata
   }

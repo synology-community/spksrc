@@ -39,12 +39,12 @@ build {
 
   provisioner "file" {
     source      = "consul_${var.version}_${var.os}_${var.arch}.spk"
-    destination = "${path.cwd}/packages/consul_${var.version}_${var.os}_${var.arch}.spk"
+    destination = "${path.cwd}/${var.dest_dir}/consul_${var.version}_${var.os}_${var.arch}.spk"
     direction   = "download"
   }
 
   post-processor "manifest" {
-    output      = "${path.cwd}/packages/consul-manifest.json"
+    output      = "${path.cwd}/${var.dest_dir}/consul-manifest.json"
     strip_path  = true
     custom_data = local.metadata
   }

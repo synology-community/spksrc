@@ -27,3 +27,9 @@ variable "os_max_ver" {
   description = "The maxiumum OS version to use for the Nomad server"
   default     = ""
 }
+
+variable "dest_dir" {
+  type        = string
+  description = "The directory to store the Consul package"
+  default     = "packages"
+}
