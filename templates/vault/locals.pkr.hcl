@@ -6,7 +6,7 @@ locals {
     thirdparty                 = "yes"
     description                = "Secrets Made Easy by HashiCorp Vault."
     displayname                = "HashiCorp Vault"
-    maintainer                 = "Appkins"
+    maintainer                 = "Synology Community"
     maintainer_url             = "https://github.com/synology-community/spksrc"
     create_time                = formatdate("YYYYMMDD-hh:mm:ss", timestamp())
     support_conf_folder        = "yes"
@@ -16,7 +16,7 @@ locals {
     silent_install             = "no"
     silent_uninstall           = "no"
     silent_upgrade             = "no"
-    beta                       = "yes"
+    beta                       = true
     link                       = "${var.url}${var.dest_dir}/vault_${var.version}_${var.os}_${var.arch}.spk"
   }
 

@@ -43,6 +43,12 @@ build {
     direction   = "download"
   }
 
+  provisioner "file" {
+    source      = "package/ui/images/consul_256.png"
+    destination = "${path.cwd}/assets/img/consul_256.png"
+    direction   = "download"
+  }
+
   post-processor "manifest" {
     output      = "${path.cwd}/${var.dest_dir}/manifest.json"
     strip_path  = true

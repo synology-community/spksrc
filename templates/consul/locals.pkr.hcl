@@ -6,8 +6,8 @@ locals {
     thirdparty                 = "yes"
     description                = "Service Discovery Made Easy by HashiCorp Consul."
     displayname                = "HashiCorp Consul"
-    maintainer                 = "Nigel Bazzeghin"
-    maintainer_url             = "https://github.com/nbazzeghin/synology-consul"
+    maintainer                 = "Synology Community"
+    maintainer_url             = "https://github.com/synology-community/spksrc"
     create_time                = formatdate("YYYYMMDD-hh:mm:ss", timestamp())
     support_conf_folder        = "yes"
     startstop_restart_services = "nginx"
@@ -16,7 +16,7 @@ locals {
     silent_install             = "no"
     silent_uninstall           = "no"
     silent_upgrade             = "no"
-    beta                       = "yes"
+    beta                       = true
     link                       = "${var.url}${var.dest_dir}/consul_${var.version}_${var.os}_${var.arch}.spk"
     # package_icon_128           = filebase64("package/ui/images/consul.png")
     # package_icon_256           = filebase64("package/ui/images/consul_256.png")
