@@ -18,7 +18,7 @@ layout: null
     "qinst": true,
     "qupgrade": true,
     "thumbnail": [
-      "{{ site.url }}/assets/img/{{ package.package }}_256.png"
+      "{{ site.url }}/spksrc/assets/img/{{ package.package }}_256.png"
     ],
     "link": "{{ package.link }}"
   }{% unless forloop.last %},{% endunless %}
