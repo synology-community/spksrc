@@ -33,3 +33,9 @@ variable "dest_dir" {
   description = "The directory to store the Consul package"
   default     = "packages"
 }
+
+variable "url" {
+  type        = string
+  description = "The URL to use for the Consul package"
+  default     = "https://synology-community.github.io/spksrc/"
+}

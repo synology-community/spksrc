@@ -1,6 +1,6 @@
 locals {
   metadata = {
-    package                    = "consul"
+    package                    = "nomad"
     version                    = var.version
     arch                       = "noarch"
     thirdparty                 = "yes"
@@ -17,6 +17,7 @@ locals {
     silent_uninstall           = "no"
     silent_upgrade             = "no"
     beta                       = "yes"
+    link                       = "${var.url}${var.dest_dir}/nomad_${var.version}_${var.os}_${var.arch}.spk"
   }
 
   info = join("\n", formatlist("%s=\"%s\"", keys(local.metadata), values(local.metadata)))

@@ -44,7 +44,7 @@ build {
   }
 
   post-processor "manifest" {
-    output      = "${path.cwd}/${var.dest_dir}/vault-manifest.json"
+    output      = "${path.cwd}/${var.dest_dir}/manifest.json"
     strip_path  = true
     custom_data = local.metadata
   }

@@ -47,6 +47,11 @@ jobs:
             packer build $d
           done
 
+      - name: Create packages json
+        run: |-
+          mkdir -p _data
+          cat packages/manifest.json | jq '[.builds[].custom_data]' > _data/packages.json
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 

@@ -17,6 +17,7 @@ locals {
     silent_uninstall           = "no"
     silent_upgrade             = "no"
     beta                       = "yes"
+    link                       = "${var.url}${var.dest_dir}/consul_${var.version}_${var.os}_${var.arch}.spk"
     # package_icon_128           = filebase64("package/ui/images/consul.png")
     # package_icon_256           = filebase64("package/ui/images/consul_256.png")
   }
